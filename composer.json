@@ -1,0 +1,24 @@
+{
+	"type": "project",
+
+    "authors": [
+        {
+            "name": "Jambonbill",
+            "email": "jambonbill@gmail.com",
+            "homepage": "https://github.com/jambonbill"
+        }
+    ],
+
+    "require": {
+    	"php": ">=7.0.0",
+        "ext-pdo": "*",
+        "monolog/monolog": "~1.1",
+        "jambonbill/djang": "^1.1"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "JAM": "src/"
+        }
+    }
+}
