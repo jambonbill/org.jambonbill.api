@@ -11,8 +11,13 @@ require __DIR__."/../../vendor/autoload.php";
 $B=new Djang\Base;
 $API=new JAM\APIPortfolio($B);
 
-
 $dat=[];//payload
 $dat['date']=date('c');//payload
-$dat['data']=$API->itemsPublic();
-exit(json_encode($dat));
+
+if(!empty($_GET['id'])){
+	$dat['data']=$API->itemsPublic();
+}else{
+	$dat['data']=$API->itemsPublic();
+}
+
+exit(json_encode($dat, JSON_PRETTY_PRINT));//pretty json ?

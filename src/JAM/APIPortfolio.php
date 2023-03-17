@@ -54,6 +54,22 @@ class APIPortfolio
         return $result;
     }
 
+    
+    public function item(int $id)
+    {
+        $sql = "SELECT id, title, date, permalink, description_short, tags, url, url_git, url_img FROM portfolio_items 
+        WHERE id>0 AND id=:id AND created_by = :uid ORDER BY date DESC;";
+        $q = $this->db()->prepare($sql);
+        
+        $q->execute(array(
+            ':uid' => 19,
+            ':id' => $id
+        ));
+
+        $result = $q->fetch(PDO::FETCH_ASSOC);
+        return $result;   
+    }
+
 
 
 }
