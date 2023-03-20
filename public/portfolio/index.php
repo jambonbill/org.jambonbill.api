@@ -15,7 +15,7 @@ $dat=[];//payload
 $dat['date']=date('c');//payload
 
 if(!empty($_GET['id'])){
-	$dat['data']=$API->itemsPublic();
+	$dat=$API->item($_GET['id']);
 }else{
 	$dat['data']=$API->itemsPublic();
 }
