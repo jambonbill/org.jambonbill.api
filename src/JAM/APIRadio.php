@@ -19,10 +19,11 @@ class APIRadio extends API
      */
     public function radios()
     {
-        $sql = "SELECT * FROM radio WHERE id>0;";
-        $q = $this->db()->prepare($sql);        
-        $q->execute();
         
+        $sql = "SELECT id, title, slug, description, url_main, url_logo FROM radio WHERE id>0;";
+     
+        $q = $this->db()->prepare($sql);        
+        $q->execute();        
         
         if($result = $q->fetchAll(PDO::FETCH_ASSOC)){
             return $result;            
