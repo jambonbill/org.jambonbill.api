@@ -10,29 +10,9 @@ namespace JAM;
 use PDO;
 use Exception;
 
-class APIRecettes
+class APIRecettes extends API
 {
-	private $_Base;
-   // private $_schema='jambonbill';
-    private $_table='log_recipes';
-
-    public function __construct (\Djang\Base $Base)
-    {
-        $this->_Base=$Base;
-    }
-
-    public function db()
-    {
-    	return $this->_Base->db();
-    }
-
     
-    private function log()
-    {
-        return $this->_Base->log()->withName((new \ReflectionClass($this))->getShortName());
-    }
-
-
 
     
     /**

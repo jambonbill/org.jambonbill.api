@@ -10,30 +10,9 @@ namespace JAM;
 use PDO;
 use Exception;
 
-class APIPortfolio
+class APIPortfolio extends API
 {
-	private $_Base;
-    private $_schema='jambonbill';
-    private $_table='portfolio_items';
-
-    public function __construct (\Djang\Base $Base)
-    {
-        $this->_Base=$Base;
-    }
-
-    public function db()
-    {
-    	return $this->_Base->db();
-    }
-
     
-    private function log()
-    {
-        return $this->_Base->log()->withName((new \ReflectionClass($this))->getShortName());
-    }
-
-
-
     
     /**
      * Return ALL my public portfolio items.
