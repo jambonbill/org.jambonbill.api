@@ -20,8 +20,10 @@ class APIRadio extends API
     public function radios()
     {
         
-        $sql = "SELECT id, title, description, url_main FROM radio WHERE id>0 AND status LIKE 'public';";
-     
+        $sql = "SELECT id, title, description, url_main FROM radio WHERE id>0 AND `status` LIKE 'public';";
+        
+        exit($sql);
+
         $q = $this->db()->prepare($sql);        
         $q->execute();        
         
@@ -41,9 +43,10 @@ class APIRadio extends API
     public function urls(int $id):array
     {
         
-        $sql = "SELECT id, url, url_img, name, status FROM radio_urls WHERE id>0 AND radio_id=:id;";
+        $sql = "SELECT id, url, url_img, name, url_status AS status FROM radio_urls WHERE id>0 AND radio_id=:id;";
         
         $q = $this->db()->prepare($sql);        
+        
         $q->execute([':id' => $id]);
 
         $result = $q->fetchAll(PDO::FETCH_ASSOC);
@@ -55,7 +58,7 @@ class APIRadio extends API
     
     public function get(int $id):array
     {
-        $sql = "SELECT * FROM radio WHERE id>0 AND id=:id LIMIT 1;";
+        $sql = "SELECT id, title, slug, description, url_main, url_logo FROM radio WHERE id>0 AND id=:id AND status LIKE 'public' LIMIT 1;";
 
         $q = $this->db()->prepare($sql);
         
