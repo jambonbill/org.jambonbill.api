@@ -1,0 +1,29 @@
+#skills
+JavaScript/ES6
+PHP7 & 8
+NodeJS
+Python
+C#
+Composer
+Packagist
+Symfony
+Npm
+React
+JQuery
+D3.js 
+API REST
+SOAP
+Google API’s
+AWS
+MariaDB
+MySQL 
+SQLite
+PostGres
+MongoDB
+Redis
+GIT
+Docker
+Composer
+Regexp
+PSR2
+PWA
