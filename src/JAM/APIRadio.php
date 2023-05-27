@@ -22,7 +22,7 @@ class APIRadio extends API
         
         $sql = "SELECT id, title, description, url_main FROM radio WHERE id>0 AND `status` LIKE 'public';";
         
-        exit($sql);
+        //exit($sql);
 
         $q = $this->db()->prepare($sql);        
         $q->execute();        
